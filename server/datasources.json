@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "delfindb": {
+    "host": "ds123796.mlab.com",
+    "port": 23796,
+    "url": "${DB_URL}",
+    "database": "delfin17-18",
+    "password": "${DB_PASSWORD}",
+    "name": "delfindb",
+    "user": "${DB_USER}",
+    "connector": "mongodb"
+  }
+}

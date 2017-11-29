@@ -1,0 +1,51 @@
+{
+  "name": "swimmer",
+  "plural": "swimmers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "times": {
+      "type": [
+        "object"
+      ],
+      "default": []
+    },
+    "raceIds": {
+      "type": [
+        "number"
+      ],
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "competition": {
+      "type": "hasAndBelongsToMany",
+      "model": "competition",
+      "foreignKey": ""
+    },
+    "school": {
+      "type": "belongsTo",
+      "model": "school",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

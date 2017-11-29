@@ -1,0 +1,39 @@
+{
+  "name": "school",
+  "plural": "schools",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "isRanked": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "competition": {
+      "type": "hasAndBelongsToMany",
+      "model": "competition",
+      "foreignKey": ""
+    },
+    "swimmers": {
+      "type": "hasMany",
+      "model": "swimmer",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
